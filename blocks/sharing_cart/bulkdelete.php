@@ -3,7 +3,7 @@
  *  Sharing Cart - Bulk Delete Operation
  *  
  *  @author  VERSION2, Inc.
- *  @version $Id: bulkdelete.php 543 2011-11-18 16:58:01Z malu $
+ *  @version $Id: bulkdelete.php 544 2011-12-09 07:26:15Z malu $
  */
 
 require_once '../../config.php';
@@ -17,14 +17,16 @@ $return_to = $CFG->wwwroot.'/course/view.php?id='.$course_id;
 
 require_login($course_id);
 
-if (is_array($delete = optional_param('delete', null, PARAM_RAW))) try {
-	// 削除実行
+$delete_param = function_exists('optional_param_array')
+	? optional_param_array('delete', null, PARAM_RAW)
+	: optional_param('delete', null, PARAM_RAW);
+if (is_array($delete_param)) try {
 	
 	set_time_limit(0);
 	
 	$notifications = array();
 	
-	$delete_ids = array_map('intval', array_keys($delete));
+	$delete_ids = array_map('intval', array_keys($delete_param));
 	
 	list ($sql, $params) = $DB->get_in_or_equal($delete_ids);
 	$records = $DB->get_records_select(sharing_cart\record::TABLE,
