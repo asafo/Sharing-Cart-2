@@ -3,7 +3,7 @@
  *  Sharing Cart - Backup Implementation
  *  
  *  @author  VERSION2, Inc.
- *  @version $Id: backup.php 539 2011-11-18 05:51:31Z malu $
+ *  @version $Id: backup.php 619 2012-03-16 09:50:26Z malu $
  */
 
 namespace sharing_cart;
@@ -76,7 +76,7 @@ class backup
 		$this->filename = $filename;
 		
 		// Non-Interactive mode doesn't work fine for now...
-		// We start with Interactive mode and fake the UI settings.
+		// We start with Interactive mode and impersonate the UI settings.
 		$this->controller = new \backup_controller(
 			\backup::TYPE_1ACTIVITY,
 			$this->cm->id,
@@ -148,7 +148,7 @@ class backup
 		);
 		$params += array('stage' => $stage) + $common;
 		
-		// execute a stage with fake parameters
+		// execute a stage with impersonated parameters
 		utils\post_update($params);
 		{
 			$ui = new \backup_ui($this->controller);

@@ -3,7 +3,7 @@
  *  Sharing Cart - Restore Implementation
  *  
  *  @author  VERSION2, Inc.
- *  @version $Id: restore.php 516 2011-07-22 11:44:23Z malu $
+ *  @version $Id: restore.php 698 2012-04-26 03:24:55Z malu $
  */
 
 namespace sharing_cart;
@@ -53,6 +53,14 @@ class restore
 	 */
 	public function restore_file($filename)
 	{
+		// some Moodle UI functions require $PAGE->set_url()...
+		$GLOBALS['PAGE']->set_url('/blocks/sharing_cart/restore.php', array(
+			'id'      => required_param('id', PARAM_INT),
+			'course'  => required_param('course', PARAM_INT),
+			'section' => required_param('section', PARAM_INT),
+			'return'  => urldecode(required_param('return', PARAM_TEXT)),
+			));
+		
 		// copy the backup archive to the temporary directory
 		$filename = $this->copy_archive_to_tempdir($filename);
 		$this->tempfiles[] = $filename;
