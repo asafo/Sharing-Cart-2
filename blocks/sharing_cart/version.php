@@ -1,3 +1,3 @@
-<?php // $Id: version.php 538 2011-11-14 00:45:11Z malu $
+<?php // $Id: version.php 702 2012-04-26 05:43:27Z malu $
 
-$plugin->version = 2011111101;
+$plugin->version = 2012042600;
