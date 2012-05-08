@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?><!-- $Id: install.xml 540 2011-11-18 05:56:24Z malu $ -->
-<XMLDB PATH="blocks/sharing_cart/db" VERSION="2011111101" COMMENT="XMLDB file for Moodle sharing cart"
+<?xml version="1.0" encoding="UTF-8" ?><!-- $Id: install.xml 718 2012-05-08 01:35:06Z malu $ -->
+<XMLDB PATH="blocks/sharing_cart/db" VERSION="2012050800" COMMENT="XMLDB file for Moodle sharing cart"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="sharing_cart" COMMENT="table to store sharing data" NEXT="sharing_cart_plugins">
+    <TABLE NAME="block_sharing_cart" COMMENT="table to store sharing data" NEXT="block_sharing_cart_plugins">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="userid"/>
         <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="modname"/>
@@ -21,7 +21,7 @@
       </KEYS>
     </TABLE>
     
-    <TABLE NAME="sharing_cart_plugins" COMMENT="table to store sharing cart plugins data" PREVIOUS="sharing_cart">
+    <TABLE NAME="block_sharing_cart_plugins" COMMENT="table to store sharing cart plugins data" PREVIOUS="block_sharing_cart">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="plugin"/>
         <FIELD NAME="plugin" TYPE="char" LENGTH="32" NOTNULL="true" DEFAULT="" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="userid"/>

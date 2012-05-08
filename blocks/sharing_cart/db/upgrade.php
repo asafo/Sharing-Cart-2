@@ -40,5 +40,13 @@ function xmldb_block_sharing_cart_upgrade($oldversion = 0)
 		$dbman->rename_field($table, $field, 'userid');
 	}
 	
+	if ($oldversion < 2012050800) {
+		$table = new xmldb_table('sharing_cart');
+		$dbman->rename_table($table, 'block_sharing_cart');
+		
+		$table = new xmldb_table('sharing_cart_plugins');
+		$dbman->rename_table($table, 'block_sharing_cart_plugins');
+	}
+	
 	return true;
 }

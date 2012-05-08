@@ -1,7 +1,7 @@
 Sharing Cart 2
 ==============
 
-version 2.2, release 1 - 2012.04.26
+version 2.2, release 1 patch 1 - 2012.05.08
 
 Purpose
 -------

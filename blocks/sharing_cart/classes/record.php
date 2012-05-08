@@ -3,7 +3,7 @@
  *  Sharing Cart - Record Manager
  *  
  *  @author  VERSION2, Inc.
- *  @version $Id: record.php 536 2011-11-13 14:19:55Z malu $
+ *  @version $Id: record.php 718 2012-05-08 01:35:06Z malu $
  */
 
 namespace sharing_cart;
@@ -12,7 +12,7 @@ require_once __DIR__.'/exception.php';
 
 class record
 {
-	const TABLE = 'sharing_cart';
+	const TABLE = 'block_sharing_cart';
 	
 	public $id       = null;
 	public $userid   = null;
