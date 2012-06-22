@@ -3,6 +3,7 @@ Sharing Cart 2
 
 version 2.2, release 1 patch 1 - 2012.05.08
 
+
 Purpose
 -------
 
@@ -14,10 +15,12 @@ It copies and moves single course items without user data
 Items can be collected and saved on the Sharing Cart indefinitely,
 serving as a library of frequently used course items available for duplication.
 
+
 Requirements
 ------------
 
-Moodle 2.0 or later
+Moodle 2.0 to 2.2 (not compatible with 2.3)
+
 
 License
 -------
