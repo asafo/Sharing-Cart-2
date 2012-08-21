@@ -30,5 +30,5 @@ try {
 	redirect($return_to);
 } catch (Exception $ex) {
 	//print_error('err:restore', 'block_sharing_cart', $return_to);
-	error($ex->__toString()); // デバッグ用に詳細メッセージを表示
+	print_error($ex->__toString()); // デバッグ用に詳細メッセージを表示
 }

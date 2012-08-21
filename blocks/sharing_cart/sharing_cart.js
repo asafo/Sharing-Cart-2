@@ -431,7 +431,7 @@ function sharing_cart(params)
 			sections.forEach(function (section) { section.hideTarget(); });
 			clipboard.hide();
 		});
-		descendants(document.body, "div", "section_add_menus").forEach(function (menu, i)
+	    descendants(document.body, "div", "addresourcedropdown").forEach(function (menu, i)
 		{
 			sections.push(new Section(menu.parentNode, i));
 		});

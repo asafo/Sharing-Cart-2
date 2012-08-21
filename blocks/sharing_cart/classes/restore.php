@@ -9,6 +9,7 @@
 namespace sharing_cart;
 
 require_once __DIR__.'/../../../backup/util/includes/restore_includes.php';
+require_once __DIR__.'/../../../backup/util/ui/renderer.php';
 
 require_once __DIR__.'/exception.php';
 require_once __DIR__.'/storage.php';
@@ -191,9 +192,11 @@ class restore
 	private $course, $section, $context, $tempfiles;
 }
 
-class stage_confirm_hook_renderer
+class stage_confirm_hook_renderer extends  \core_backup_renderer
 {
-	public function backup_details($details, \moodle_url $url)
+        public function __construct() {
+        }
+	public function backup_details($details, $url)
 	{
 		$this->filepath = $url->param('filepath');
 	}
